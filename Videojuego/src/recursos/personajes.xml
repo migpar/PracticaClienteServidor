@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean class="videojuego.Arco" id="arco">
+		<constructor-arg index="0" value="15"></constructor-arg>
+		<constructor-arg index="1" value="arco elfico"></constructor-arg>
+	</bean>
+
+	<bean class="videojuego.Espada" id="espada">
+		<constructor-arg index="0" value="20"></constructor-arg>
+		<constructor-arg index="1" value="Gladius"></constructor-arg>
+	</bean>
+
+	<bean class="videojuego.Rezos" id="salmo">
+		<constructor-arg index="0" value="15"></constructor-arg>
+		<constructor-arg index="1" value="Ave Maria"></constructor-arg>
+	</bean>
+
+	<bean class="videojuego.Hechizos" id="magia">
+		<constructor-arg index="0" value="20"></constructor-arg>
+		<constructor-arg index="1" value="Piro++"></constructor-arg>
+	</bean>
+
+<!-- ............................................................................................................................. -->
+
+	<bean class="videojuego.Guerrero" id="guerreroEspada">
+		<constructor-arg index="0" value="Maximo"></constructor-arg>
+		<constructor-arg index="1" ref="espada"></constructor-arg>
+		<constructor-arg index="2" value="350"></constructor-arg>
+		<constructor-arg index="3" value="20"></constructor-arg>
+	</bean>
+	
+	<bean class="videojuego.Guerrero" id="guerreroArco">
+		<constructor-arg index="0" value="Legolas"></constructor-arg>
+		<constructor-arg index="1" ref="arco"></constructor-arg>
+		<constructor-arg index="2" value="450"></constructor-arg>
+		<constructor-arg index="3" value="12"></constructor-arg>
+	</bean>
+	
+	<bean class="videojuego.Curanderos" id="curandero">
+		<constructor-arg index="0" value="Fray Perico"></constructor-arg>
+		<constructor-arg index="1" ref="salmo"></constructor-arg>
+		<constructor-arg index="2" value="250"></constructor-arg>
+		<constructor-arg index="3" value="17"></constructor-arg>
+	</bean>
+	
+	<bean class="videojuego.Mago" id="mago">
+		<constructor-arg index="0" value="20"></constructor-arg>
+		<constructor-arg index="1" value="250"></constructor-arg>
+		<constructor-arg index="2" ref="magia"></constructor-arg>
+		<constructor-arg index="3" value="Lulu"></constructor-arg>
+	</bean>
+
+</beans>

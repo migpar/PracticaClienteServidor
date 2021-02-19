@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Direcciones -->
+	<bean id="direccionPropietario"
+		class="TareaInmobiliaria.Direccion">
+		<constructor-arg index="0" value="Calle"></constructor-arg>
+		<constructor-arg index="1" value="Rue Percebe"></constructor-arg>
+		<constructor-arg index="2" value="59876"></constructor-arg>
+	</bean>
+
+	<bean id="direccionCasa" class="TareaInmobiliaria.Direccion">
+		<constructor-arg index="0" value="Avenida"></constructor-arg>
+		<constructor-arg index="1" value="La otra Calle"></constructor-arg>
+		<constructor-arg index="2" value="43417"></constructor-arg>
+	</bean>
+	<!-- Personas -->
+	<bean id="propietario" class="TareaInmobiliaria.Persona">
+		<constructor-arg index="0" value="Manolete"></constructor-arg>
+		<constructor-arg index="1" value="1/2/1993"></constructor-arg>
+		<constructor-arg index="2" value="639254176"></constructor-arg>
+		<constructor-arg index="3" ref="direccionPropietario"></constructor-arg>
+	</bean>
+
+	<!-- Arraylist inquilinos -->
+	<bean id="inquilinos" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<bean id="propietario" class="TareaInmobiliaria.Persona">
+					<constructor-arg index="0" value="Manlillo"></constructor-arg>
+					<constructor-arg index="1" value="2/3/1993"></constructor-arg>
+					<constructor-arg index="2" value="626987456"></constructor-arg>
+					<constructor-arg index="3" ref="direccionCasa"></constructor-arg>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- ArrayList habitaciones -->
+	<bean id="habitaciones" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<bean class="TareaInmobiliaria.Habitacion">
+					<constructor-arg index="0" value="DORMITORIO"></constructor-arg>
+					<constructor-arg index="1" value="15"></constructor-arg>
+				</bean>
+				<bean class="TareaInmobiliaria.Habitacion">
+					<constructor-arg index="0" value="DORMITORIO"></constructor-arg>
+					<constructor-arg index="1" value="20"></constructor-arg>
+				</bean>
+				<bean class="TareaInmobiliaria.Habitacion">
+					<constructor-arg index="0" value="DORMITORIO"></constructor-arg>
+					<constructor-arg index="1" value="15"></constructor-arg>
+				</bean>
+				<bean class="TareaInmobiliaria.Habitacion">
+					<constructor-arg index="0" value="DORMITORIO"></constructor-arg>
+					<constructor-arg index="1" value="15.03"></constructor-arg>
+				</bean>
+				<bean class="TareaInmobiliaria.Habitacion">
+					<constructor-arg index="0" value="BAÑO"></constructor-arg>
+					<constructor-arg index="1" value="10"></constructor-arg>
+				</bean>
+				<bean class="TareaInmobiliaria.Habitacion">
+					<constructor-arg index="0" value="COCINA"></constructor-arg>
+					<constructor-arg index="1" value="30"></constructor-arg>
+				</bean>
+				<bean class="TareaInmobiliaria.Habitacion">
+					<constructor-arg index="0" value="SALON"></constructor-arg>
+					<constructor-arg index="1" value="50"></constructor-arg>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- casa -->
+	<bean id="casa" class="TareaInmobiliaria.Casa">
+		<constructor-arg index="0" ref="habitaciones"></constructor-arg>
+		<constructor-arg index="1" ref="propietario"></constructor-arg>
+		<constructor-arg index="2" ref="direccionCasa"></constructor-arg>
+		<constructor-arg index="3" ref="inquilinos"></constructor-arg>
+	</bean>
+
+</beans>

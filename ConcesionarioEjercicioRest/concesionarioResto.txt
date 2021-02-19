@@ -1,0 +1,21 @@
+Queremos hacer un servicio rest que gestione un concesionario de coches
+
+Los coches van na tener los siguientes atributos:
+	id PK
+	matricula
+	marca
+	modelo
+	potencia
+
+El servicion rest hara las siguientes operaciones basicas
+	 1- Podremos consultar coche por id
+	 2- Dar de alta coche(que sea la bbdd la que asigne el id)
+	 3- Modificar coche por id
+	 4- listar todos los coches 
+	 4- borrar coche por id
+	 
+El servicio rest trabajara por JSON
+
+Regla de negocio:(optativo)
+	No puede haber 2 coches con la misma matricula en la BBDD(capa de negocio)
+	No puede haber coches con potencia negativa
